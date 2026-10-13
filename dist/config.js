@@ -38,7 +38,7 @@ window.IlAfterForm = function (formData) {
   if (status) {
     status.hidden = false;
     status.className = "form-status form-status--success";
-    status.textContent = "Дякуємо! Заявку передано менеджеру. Ми зв’яжемося з вами найближчим часом.";
+    status.textContent = "Дякуємо! Заявку передано менеджеру. Відкриваємо сторінку подяки…";
   }
 
   if (button) {
@@ -46,6 +46,11 @@ window.IlAfterForm = function (formData) {
     button.disabled = true;
   }
 
-  // Заявка вже створена в CRM. Зупиняємо будь-який платіжний редирект.
+  // Заявка вже створена в CRM. Переходимо на локальну сторінку подяки без оплати.
+  var thankYouPath = window.location.pathname
+    .replace(/\/index\.html$/, "/")
+    .replace(/\/?$/, "/") + "thank-you/";
+
+  window.location.assign(window.location.origin + thankYouPath);
   return false;
 };
