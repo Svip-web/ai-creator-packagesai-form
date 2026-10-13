@@ -1,0 +1,238 @@
+@font-face {
+  font-family: "Sofia Extra Condensed";
+  src: url("../assets/sofia-sans-extra-condensed-semibold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Tight";
+  src: url("../assets/inter-tight-regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Tight";
+  src: url("../assets/inter-tight-bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --ink: #1b1b1b;
+  --cream: #fff8e4;
+  --blue: #e3f0ff;
+  --brand-blue: #96b2d3;
+  --deep-blue: #315782;
+  --yellow: #ffdd77;
+  --red-a: #ff3540;
+  --red-b: #ce002b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--cream);
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: "Inter Tight", Arial, sans-serif;
+}
+
+.pixel-image {
+  display: none;
+}
+
+.thank-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 42px 20px;
+}
+
+.thank-background {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.thank-page::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: rgba(255, 248, 228, .14);
+  pointer-events: none;
+}
+
+.thank-card {
+  width: min(760px, 100%);
+  padding: 42px 54px 40px;
+  border: 1px solid var(--deep-blue);
+  border-radius: 32px;
+  background: rgba(227, 240, 255, .94);
+  box-shadow: 0 22px 60px rgba(49, 87, 130, .18);
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.thank-portrait {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 22px;
+  border: 5px solid #fff;
+  border-radius: 30px;
+  display: block;
+  object-fit: contain;
+  object-position: center bottom;
+  background: #d8e8f9;
+  box-shadow: 0 14px 30px rgba(49, 87, 130, .22);
+}
+
+.payment-status {
+  width: max-content;
+  margin: 0 auto 16px;
+  padding: 9px 16px 10px;
+  border-radius: 999px;
+  background: var(--yellow);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.payment-status span {
+  display: inline-grid;
+  width: 21px;
+  height: 21px;
+  margin-right: 6px;
+  border-radius: 50%;
+  place-items: center;
+  color: #fff;
+  background: var(--deep-blue);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Sofia Extra Condensed", Arial, sans-serif;
+  font-size: clamp(48px, 6vw, 68px);
+  font-weight: 700;
+  line-height: .95;
+  text-transform: uppercase;
+}
+
+h1 span {
+  color: var(--deep-blue);
+}
+
+.thank-lead {
+  max-width: 600px;
+  margin: 24px auto 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.thank-note {
+  max-width: 590px;
+  margin: 24px auto 0;
+  padding: 18px 22px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+  background: linear-gradient(90deg, var(--red-a), var(--red-b));
+  box-shadow: 0 4px 0 #980019;
+  text-align: left;
+}
+
+.thank-note-icon {
+  flex: 0 0 auto;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.thank-note p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.thank-closing {
+  margin: 24px 0 0;
+  color: var(--deep-blue);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media (max-width: 620px) {
+  .thank-page {
+    align-items: start;
+    padding: 22px 12px;
+  }
+
+  .thank-card {
+    padding: 24px 18px 28px;
+    border-radius: 24px;
+  }
+
+  .thank-portrait {
+    width: 170px;
+    height: 170px;
+    margin-bottom: 18px;
+    border-radius: 24px;
+  }
+
+  .payment-status {
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 46px;
+  }
+
+  .thank-lead {
+    margin-top: 18px;
+    font-size: 18px;
+  }
+
+  .thank-note {
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  .thank-note p {
+    font-size: 16px;
+  }
+
+  .thank-closing {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+}
